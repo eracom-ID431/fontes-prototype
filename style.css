@@ -1,0 +1,121 @@
+:root {
+  --bleu: #2600fd;
+  --bouton-off: #9b9b9b;
+  --bouton-off-hover: #818181;
+  --classif-formelle: #ff2626;
+  --classif-fonctionnalites: #1e1e1e;
+  --gris: #7d7d7d;
+  --ombre: 3px 4px 9.3px 0 rgba(41, 34, 48, 0.07);
+  --ombre-bouton: 1px 3px 17px 0 rgba(0, 0, 0, 0.2);
+}
+
+* { box-sizing: border-box; }
+
+/* Le document entier défile (et non un conteneur interne) : plus simple pour View Transitions */
+body {
+  margin: 0;
+  font-family: "Plain", sans-serif;
+  background: #e4e4e4;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+h1, h2, h3, h4 { font-weight: 400; margin: 0; }
+
+/* ---------- Panneau de filtres ---------- */
+.panneau {
+  position: sticky;
+  top: 20px;
+  align-self: start;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+.panneau h1 { font-size: 2rem; margin-bottom: 1rem; }
+.panneau h3 { font-size: 1.25rem; margin: 1.2rem 0 .5rem; }
+.panneau h4 { font-size: 1rem; margin: .6rem 0 .4rem; color: var(--gris); }
+
+.filtre { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.filtre legend { padding: 0; width: 100%; }
+
+.filtre__bouton, .bascule, .reinitialiser {
+  font: inherit;
+  font-size: 15px;
+  border: 0;
+  border-radius: 30px;
+  padding: 7px 14px;
+  color: #fff;
+  background: var(--bouton-off);
+  box-shadow: var(--ombre-bouton);
+  cursor: pointer;
+  transition: background-color .2s;
+}
+.filtre__bouton:hover, .bascule:hover { background: var(--bouton-off-hover); }
+.filtre__bouton[aria-pressed="true"], .bascule[aria-pressed="true"] { background: var(--bleu); }
+.filtre__bouton[data-depth="1"] { font-size: 13px; padding: 5px 12px; }
+.filtre__bouton:disabled { opacity: .35; cursor: default; }
+.filtre__compte { opacity: .7; font-size: .85em; }
+
+.affichage { display: flex; gap: 8px; flex-wrap: wrap; }
+.reinitialiser { margin-top: 1.5rem; background: #383838; }
+.resultat { color: var(--gris); }
+
+/* ---------- Grille des cartes ---------- */
+.fontes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr));
+  gap: 20px;
+  align-items: start;
+}
+.carte[hidden] { display: none; }
+
+.carte {
+  position: relative;
+  background: #fff;
+  border: 1px solid #f5f6f5;
+  border-radius: 10px;
+  box-shadow: var(--ombre);
+  padding: 16px;
+  /* Chaque carte a un nom unique pour que le navigateur anime son déplacement.
+     match-element : Chrome 137+, Safari 18.2+. Sinon, mettre un nom unique en inline (PHP). */
+  view-transition-name: match-element;
+  view-transition-class: carte;
+}
+.carte__nom { display: block; height: min(120px, 20vw); max-width: 100%; }
+.carte__apercu { display: block; height: min(80px, 10vw); max-width: 100%; margin-top: -10px; }
+.carte__titre { font-size: 2.5rem; }
+.carte__styles { position: absolute; top: 0; right: 16px; font-weight: 100; }
+
+.carte__taxonomie { display: none; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 8px 0; }
+.carte__taxonomie li { font-size: 13px; color: #fff; padding: 4px 10px; border-radius: 20px; }
+.carte__taxonomie--historique li { background: var(--bleu); }
+.carte__taxonomie--formelle li { background: var(--classif-formelle); }
+.carte__taxonomie--fonctionnalite li { background: var(--classif-fonctionnalites); }
+.affiche-historique .carte__taxonomie--historique,
+.affiche-formelle .carte__taxonomie--formelle,
+.affiche-fonctionnalite .carte__taxonomie--fonctionnalite { display: flex; }
+
+.carte hr { border: 0; border-top: .5px solid var(--gris); margin: 15px 0; }
+.carte__pied { display: flex; justify-content: space-between; gap: 20px; }
+.carte__description { margin: 0; max-width: 60%; font-weight: 100; line-height: 1.4; letter-spacing: -.2px; }
+.carte__liens { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+.carte__lien { color: inherit; font-size: 14px; }
+
+.aucun { font-size: 1.25rem; color: var(--gris); }
+
+/* ---------- Animation View Transitions ---------- */
+::view-transition-group(.carte) {
+  animation-duration: .4s;
+  animation-timing-function: cubic-bezier(.2, .8, .2, 1);
+}
+
+@media (max-width: 767px) {
+  body { grid-template-columns: 1fr; }
+  .panneau { position: static; max-height: none; }
+  .carte__pied { flex-direction: column; }
+  .carte__description { max-width: none; }
+  .carte__liens { align-items: flex-start; }
+}

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Calque_1"
+   version="1.1"
+   viewBox="0 0 2560 966.45"
+   sodipodi:docname="Apax.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview9"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.14708086"
+     inkscape:cx="275.35873"
+     inkscape:cy="23.796434"
+     inkscape:window-width="1312"
+     inkscape:window-height="866"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Calque_1" />
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs
+     id="defs2">
+    <style
+       id="style1">
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #231f20;
+      }
+
+      .st2 {
+        fill: #1d1d1b;
+      }
+
+      .st3 {
+        isolation: isolate;
+      }
+
+      .st4 {
+        clip-path: url(#clippath-1);
+      }
+
+      .st5 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath
+       id="clippath">
+      <rect
+         class="st0"
+         x="-2175.66"
+         y="-1288.75"
+         width="2125.1"
+         height="517.17"
+         id="rect1" />
+    </clipPath>
+    <clipPath
+       id="clippath-1">
+      <rect
+         class="st0"
+         x="141.39"
+         y="194.45"
+         width="1846.88"
+         height="660.92"
+         id="rect2" />
+    </clipPath>
+  </defs>
+  <g
+     class="st4"
+     clip-path="url(#clippath-1)"
+     id="g9">
+    <path
+       class="st1"
+       d="M1704.7,722.45l98.95-147.69,96.74,147.69h87.88l-142.52-203.08,132.18-184.62h-84.18l-87.88,134.4-87.88-134.4h-87.14l131.45,191.26-140.31,196.43h82.71ZM1365.74,671.49c-77.54,0-124.06-61.29-124.06-142.52s46.52-141.78,124.06-141.78,124.06,59.08,124.06,141.78-46.52,142.52-124.06,142.52M1354.66,735.74c56.86,0,109.29-26.58,135.14-60.55h1.48v47.26h67.2c-.74-12.55-.74-25.85-.74-39.14v-348.55h-70.89v48h-1.48c-25.85-35.45-69.42-59.82-131.45-59.82-110.03,0-189.05,85.66-189.05,205.29s73.85,207.51,189.78,207.51M902.74,671.49c-78.28,0-124.06-60.55-124.06-144s46.52-140.31,124.06-140.31,124.06,59.82,124.06,140.31-46.52,144-124.06,144M783.85,855.37v-82.71c0-37.66-.74-78.28-1.48-95.26,26.58,33.23,70.15,58.34,131.45,58.34,110.77,0,190.52-85.66,190.52-205.29s-74.58-207.51-189.05-207.51c-59.08,0-105.6,26.58-130.71,61.29h-1.48c0-16.98.74-33.97.74-49.48h-74.58c.74,21.42.74,42.09.74,64.25v456.37h73.85ZM342.99,396.05c11.82-31.75,42.09-121.11,51.69-144h2.95c6.65,19.94,38.4,112.25,50.22,144l38.4,102.65h-182.4l39.14-102.65ZM217.45,722.45l62.03-159.51h231.14l63.51,159.51h79.02L444.15,194.45h-90.09l-212.68,528h76.06Z"
+       id="path8" />
+  </g>
+</svg>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Calque_1"
+   version="1.1"
+   viewBox="0 0 4868.23 966.45"
+   sodipodi:docname="Infini.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview13"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.079750643"
+     inkscape:cx="921.62266"
+     inkscape:cy="-583.0674"
+     inkscape:window-width="1312"
+     inkscape:window-height="828"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Calque_1" />
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs
+     id="defs4">
+    <style
+       id="style1">
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #231f20;
+      }
+
+      .st2 {
+        fill: #1d1d1b;
+      }
+
+      .st3 {
+        isolation: isolate;
+      }
+
+      .st4 {
+        clip-path: url(#clippath-1);
+      }
+
+      .st5 {
+        clip-path: url(#clippath-3);
+      }
+
+      .st6 {
+        clip-path: url(#clippath-2);
+      }
+
+      .st7 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath
+       id="clippath">
+      <rect
+         class="st0"
+         x="-2551.13"
+         y="-940.12"
+         width="2343.63"
+         height="679.36"
+         id="rect1" />
+    </clipPath>
+    <clipPath
+       id="clippath-1">
+      <rect
+         class="st0"
+         x="-2188.7"
+         y="2041.4"
+         width="2097.03"
+         height="542.99"
+         id="rect2" />
+    </clipPath>
+    <clipPath
+       id="clippath-2">
+      <rect
+         class="st0"
+         x="274.15"
+         y="-1521.21"
+         width="4474.19"
+         height="690.87"
+         id="rect3" />
+    </clipPath>
+    <clipPath
+       id="clippath-3">
+      <rect
+         class="st0"
+         x="176.58"
+         y="159.25"
+         width="1496.3"
+         height="541.68"
+         id="rect4" />
+    </clipPath>
+  </defs>
+  <g
+     class="st5"
+     clip-path="url(#clippath-3)"
+     id="g13">
+    <path
+       class="st1"
+       d="M1586.35,349.2v1.41l12.66,90.75-8.44,259.59h78.79l-9.85-350.34v-1.41h-73.16ZM1628.56,202.17c-23.21,0-43.62,14.77-43.62,40.1,0,26.73,20.4,42.91,43.62,42.91,24.62,0,44.32-16.18,44.32-42.91,0-25.33-19.7-40.1-44.32-40.1M1337.32,412.51c43.62-.7,76.68,14.07,74.57,82.31l-6.33,206.12h78.79l-7.74-229.34c-2.81-78.79-35.17-129.44-100.6-129.44-37.28,0-73.87,23.92-104.82,49.95l-13.37,11.26-1.41-54.17h-73.16v1.41l12.66,90.75-8.44,259.59h78.79l-7.03-259.59c23.22-16.18,52.06-29.55,78.09-28.84M866.69,396.33h144.21l-9.15,304.61h78.79l-9.85-358.78-203.31,9.15v-32.36c2.11-60.5,15.48-99.9,81.6-99.9,28.84,0,72.46,11.26,105.52,28.14h1.41l-14.07-75.98c-21.1-7.74-64.02-11.96-92.86-11.96-125.22,0-147.03,88.64-144.92,145.62l1.41,44.32-56.28-7.03v54.17h58.39l-9.15,304.61h76.68l-8.44-304.61ZM531.83,412.51c43.62-.7,76.68,14.07,74.57,82.31l-6.33,206.12h78.79l-7.74-229.34c-2.81-78.79-35.17-129.44-100.6-129.44-37.28,0-73.87,23.92-104.82,49.95l-13.37,11.26-1.41-54.17h-73.16v1.41l12.66,90.75-8.44,259.59h78.79l-7.03-259.59c23.22-16.18,52.06-29.55,78.09-28.84M176.58,700.94h85.12l-10.55-277.17,10.55-250.44h-85.12l10.55,250.44-10.55,277.17Z"
+       id="path12" />
+  </g>
+</svg>

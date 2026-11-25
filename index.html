@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fontes Eracom — prototype filtrage JS</title>
+<link rel="stylesheet" href="style.css">
+<script src="filtre.js" defer></script>
+</head>
+<body>
+<aside class="panneau">
+  <h1>Filtres</h1>
+  <div class="affichage">
+    <button type="button" class="bascule" data-affiche="historique" aria-pressed="true">Historique</button>
+    <button type="button" class="bascule" data-affiche="formelle" aria-pressed="false">Formelle</button>
+    <button type="button" class="bascule" data-affiche="fonctionnalite" aria-pressed="false">Fonctionnalités</button>
+  </div>
+  <form class="filtres">
+<fieldset class="filtre" data-groupe="historique" data-taxo="historique">
+  <legend><h3>Classification historique</h3></legend>
+  <button type="button" class="filtre__bouton" data-term="incises" data-depth="0" aria-pressed="false">Incises <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="scriptes" data-depth="0" aria-pressed="false">Scriptes <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="serifs" data-depth="0" aria-pressed="false">Sérifs <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="humanistes" data-depth="1" aria-pressed="false">Humanistes Sérifs <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="reales" data-depth="1" aria-pressed="false">Réales <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="garaldes" data-depth="1" aria-pressed="false">Garaldes <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="didones" data-depth="1" aria-pressed="false">Didones <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="slab-serifs" data-depth="0" aria-pressed="false">Slab-Sérifs <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="sans-serifs" data-depth="0" aria-pressed="false">Sans-Sérifs <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="grotesques" data-depth="1" aria-pressed="false">Grotesques <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="geometriques" data-depth="1" aria-pressed="false">Géométriques <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="sans-serifs-humanistes" data-depth="1" aria-pressed="false">Humanistes Sans <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="non-latines" data-depth="0" aria-pressed="false">Non-Latines <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="hybrides" data-depth="0" aria-pressed="false">Hybrides <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="expressives" data-depth="0" aria-pressed="false">Expressives <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="monospace" data-depth="0" aria-pressed="false">Monospace <span class="filtre__compte"></span></button>
+</fieldset>
+<h3>Classification formelle</h3>
+<fieldset class="filtre" data-groupe="squelette" data-taxo="formelle">
+  <legend><h4>1. Squelette</h4></legend>
+  <button type="button" class="filtre__bouton" data-term="dynamique" data-depth="0" aria-pressed="false">Dynamique <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="statique" data-depth="0" aria-pressed="false">Statique <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="geometrique" data-depth="0" aria-pressed="false">Géométrique <span class="filtre__compte"></span></button>
+</fieldset>
+<fieldset class="filtre" data-groupe="graisse" data-taxo="formelle">
+  <legend><h4>2. Graisse</h4></legend>
+  <button type="button" class="filtre__bouton" data-term="contraste" data-depth="0" aria-pressed="false">Contrasté <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="lineaire" data-depth="0" aria-pressed="false">Linéaire <span class="filtre__compte"></span></button>
+</fieldset>
+<fieldset class="filtre" data-groupe="enveloppe" data-taxo="formelle">
+  <legend><h4>3. Enveloppe</h4></legend>
+  <button type="button" class="filtre__bouton" data-term="avec" data-depth="0" aria-pressed="false">Avec empattements <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="sans" data-depth="0" aria-pressed="false">Sans empattements <span class="filtre__compte"></span></button>
+</fieldset>
+<fieldset class="filtre" data-groupe="typologie" data-taxo="formelle">
+  <legend><h4>Typologie</h4></legend>
+  <button type="button" class="filtre__bouton" data-term="revival-classique" data-depth="0" aria-pressed="false">Revival Classique <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="revival-moderne" data-depth="0" aria-pressed="false">Revival Moderne <span class="filtre__compte"></span></button>
+</fieldset>
+<fieldset class="filtre" data-groupe="fonctionnalites" data-taxo="fonctionnalite">
+  <legend><h3>Fonctionnalités</h3></legend>
+  <button type="button" class="filtre__bouton" data-term="chiffres-non-alignes" data-depth="0" aria-pressed="false">Chiffres non alignés <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="fonte-variable" data-depth="0" aria-pressed="false">Fonte variable <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="licence-libre" data-depth="0" aria-pressed="false">Licence libre (open source) <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="petites-capitales" data-depth="0" aria-pressed="false">Petites capitales <span class="filtre__compte"></span></button>
+  <button type="button" class="filtre__bouton" data-term="variations-stylistiques" data-depth="0" aria-pressed="false">Variations stylistiques <span class="filtre__compte"></span></button>
+</fieldset>
+  </form>
+  <button type="button" class="reinitialiser">Réinitialiser les filtres</button>
+  <p class="resultat" aria-live="polite"></p>
+</aside>
+<main>
+<ul class="fontes affiche-historique">
+<li class="carte" id="fonte-0" data-historique="serifs garaldes" data-formelle="dynamique contraste avec revival-moderne" data-fonctionnalite="petites-capitales chiffres-non-alignes">
+  <img class="carte__nom" src="assets/specimens/J_Jannon.svg" alt="JJannon" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/JJannon_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">8 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Garaldes</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Contrasté</li><li>Avec empattements</li><li>Revival Moderne</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Petites capitales</li><li>Chiffres non alignés</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">JJannon est une typographie dessinée par François Rappo. Elle a été publiée par Optimo en 2018.</p><div class="carte__liens"><a href="https://fontsinuse.com/typefaces/93568/jjannon" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a><a href="https://fr.wikipedia.org/wiki/Jean_Jannon" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-1" data-historique="sans-serifs grotesques" data-formelle="statique lineaire sans" data-fonctionnalite="fonte-variable">
+  <img class="carte__nom" src="assets/specimens/Crystal.svg" alt="Crystal" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Crystal_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">132 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Grotesques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Linéaire</li><li>Sans empattements</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Fonte variable</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Crystal est une typographie dessinée par Ian Party. Elle a été publiée par Newglyph en 2020.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s2/crystal/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/172189/crystal-newglyph" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-2" data-historique="sans-serifs grotesques" data-formelle="statique lineaire sans" data-fonctionnalite="licence-libre">
+  <img class="carte__nom" src="assets/specimens/CooperHewitt-Fontname.svg" alt="Cooper Hewitt" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/CooperHewitt_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">14 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Grotesques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Linéaire</li><li>Sans empattements</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Licence libre (open source)</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Cooper Hewitt est une typographie dessinée par Chester Jenkins en 2014.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/cooper-hewitt/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/32572/cooper-hewitt" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-3" data-historique="serifs reales" data-formelle="dynamique contraste avec revival-classique" data-fonctionnalite="fonte-variable licence-libre">
+  <img class="carte__nom" src="assets/specimens/IbarraRealNova_fontname.svg" alt="Ibarra Real Nova" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Ibarra_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">8 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Réales</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Contrasté</li><li>Avec empattements</li><li>Revival Classique</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Fonte variable</li><li>Licence libre (open source)</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Ibarra Real Nova est une typographie dessinée par José María Ribagorda, Octavio Pardo en 2007.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/ibarra-real-nova/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fr.wikipedia.org/wiki/Ibarra_(police_de_caract%C3%A8res)" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-4" data-historique="sans-serifs hybrides sans-serifs-humanistes" data-formelle="revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Thesis_TheSans_v.svg" alt="TheSans (Thesis)" loading="lazy">
+  
+  
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Hybrides</li><li>Humanistes Sans</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">TheSans (Thesis) est une typographie dessinée par Luc(as) de Groot. Elle a été publiée par Luc(as) de Groot en 1994.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/thesis/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/4715/thesans" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-5" data-historique="sans-serifs grotesques" data-formelle="statique lineaire sans" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Antarctica.svg" alt="Antarctica" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Antarctica_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">264 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Grotesques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Linéaire</li><li>Sans empattements</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Antarctica est une typographie dessinée par Ian Party. Elle a été publiée par Newglyph en 2020.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/antarctica/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a></div></div>
+</li>
+<li class="carte" id="fonte-6" data-historique="monospace" data-formelle="" data-fonctionnalite="fonte-variable">
+  <img class="carte__nom" src="assets/specimens/Aloha.svg" alt="Aloha" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Aloha_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">5 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Monospace</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Fonte variable</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Aloha est une typographie dessinée par Ian Party. Elle a été publiée par Newglyph en 2020.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s2/aloha/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/146895/aloha" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-7" data-historique="serifs garaldes" data-formelle="dynamique contraste avec revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Estuary.svg" alt="Estuary" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Estuary_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">8 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Garaldes</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Contrasté</li><li>Avec empattements</li><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Estuary est une typographie dessinée par Stijn Cremers. Elle a été publiée par Dutch Type Library en 2020.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/estuary/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a></div></div>
+</li>
+<li class="carte" id="fonte-8" data-historique="expressives" data-formelle="" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/RuderPlakat.svg" alt="Ruder Plakat" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/RuderPlakat_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">24 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Expressives</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Ruder Plakat est une typographie dessinée par Hans-Christian Pulver, Arve Båtevik, Anatole Couteau. Elle a été publiée par Lineto en 2022.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/ruder-plakat/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/210355/ll-ruder-plakat" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-9" data-historique="serifs reales" data-formelle="dynamique contraste avec revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/PublicoText_fontname.svg" alt="Publico Text" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/PublicoText_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">6 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Réales</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Contrasté</li><li>Avec empattements</li><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Publico Text est une typographie dessinée par Christian Schwartz, Paul Barnes. Elle a été publiée par Commercial Type en 2009.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/publico-text/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/15/publico" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-10" data-historique="sans-serifs sans-serifs-humanistes" data-formelle="sans" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/GillSans_Fontname.svg" alt="Gill Sans" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/GillSans_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">24 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Humanistes Sans</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Sans empattements</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Gill Sans est une typographie dessinée par Eric Gill. Elle a été publiée par Monotype en 2001.</p><div class="carte__liens"><a href="https://fontsinuse.com/typefaces/45/gill-sans" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a><a href="https://en.wikipedia.org/wiki/Gill_Sans" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-11" data-historique="sans-serifs geometriques" data-formelle="geometrique lineaire sans revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Apax.svg" alt="Apax" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Apax_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Géométriques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Géométrique</li><li>Linéaire</li><li>Sans empattements</li><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Apax est une typographie dessinée par François Rappo. Elle a été publiée par Optimo en 2016.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/apax/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/44262/apax" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-12" data-historique="sans-serifs sans-serifs-humanistes" data-formelle="dynamique lineaire sans revival-classique" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Font_Name-копия.svg" alt="Balance Pro" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Quick_Brown_Fox-копия-1.svg" alt="" loading="lazy">
+  <p class="carte__styles">8 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Humanistes Sans</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Linéaire</li><li>Sans empattements</li><li>Revival Classique</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Balance Pro est une typographie dessinée par Evert Bloemsma. Elle a été publiée par FontFont en 1993.</p><div class="carte__liens"><a href="https://www.behance.net/gallery/7809479/FF-Balance-specimen" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/2402/ff-balance" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a><a href="https://en.wikipedia.org/wiki/Evert_Bloemsma" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-13" data-historique="sans-serifs hybrides" data-formelle="statique lineaire sans" data-fonctionnalite="licence-libre">
+  <img class="carte__nom" src="assets/specimens/Red_Hat_Text_Fontname-1.svg" alt="Red Hat Text" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Quick_Brown_Fox-1.svg" alt="" loading="lazy">
+  <p class="carte__styles">8 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Hybrides</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Linéaire</li><li>Sans empattements</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Licence libre (open source)</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Red Hat Text est une typographie dessinée par Jeremy Mickel. Elle a été publiée par MCKL en 2019.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/red-hat/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/145062/red-hat-text" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-14" data-historique="sans-serifs geometriques" data-formelle="geometrique lineaire sans revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Geograph-fontname.svg" alt="Geograph" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Geograph_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">12 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Géométriques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Géométrique</li><li>Linéaire</li><li>Sans empattements</li><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Geograph est une typographie dessinée par Kris Sowersby. Elle a été publiée par Klim Type Foundry en 2018.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/geograph/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a></div></div>
+</li>
+<li class="carte" id="fonte-15" data-historique="slab-serifs" data-formelle="statique contraste avec revival-classique" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Serifa.svg" alt="Serifa" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Serifa_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Slab-Sérifs</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Contrasté</li><li>Avec empattements</li><li>Revival Classique</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Serifa est une typographie dessinée par Adrian Frutiger. Elle a été publiée par Fonderie Bauer en 1967.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s2/glypha/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/318/serifa" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a><a href="https://fr.wikipedia.org/wiki/Serifa" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-16" data-historique="slab-serifs" data-formelle="statique contraste avec revival-classique" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/EgyptienneF.svg" alt="Egyptienne F" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/EgyptienneF_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">4 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Slab-Sérifs</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Contrasté</li><li>Avec empattements</li><li>Revival Classique</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Egyptienne F est une typographie dessinée par Adrian Frutiger. Elle a été publiée par Deberny &amp; Peignot en 1958.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/egyptienne-f/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/56/egyptienne-f" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-17" data-historique="sans-serifs sans-serifs-humanistes" data-formelle="dynamique lineaire sans revival-classique" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Johnston_FontName.svg" alt="ITC Johnston" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Johnston_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">6 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Humanistes Sans</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Linéaire</li><li>Sans empattements</li><li>Revival Classique</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">ITC Johnston est une typographie dessinée par Dave Farey, Richard Dawson, Edward Johnston. Elle a été publiée par ITC en 1999.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/johnston/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/3388/itc-johnston" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a><a href="https://en.wikipedia.org/wiki/Johnston_%28typeface%29#ITC_Johnston" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-18" data-historique="serifs reales" data-formelle="dynamique contraste avec" data-fonctionnalite="licence-libre">
+  <img class="carte__nom" src="assets/specimens/Spectral_fontname.svg" alt="Spectral" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Spectral_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">14 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Réales</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Contrasté</li><li>Avec empattements</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Licence libre (open source)</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Spectral est une typographie dessinée par Jean-Baptiste Levée. Elle a été publiée par ProductionType en 2017.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/spectral/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/46526/spectral" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-19" data-historique="sans-serifs geometriques" data-formelle="geometrique lineaire sans" data-fonctionnalite="fonte-variable">
+  <img class="carte__nom" src="assets/specimens/Alaska_fontname.svg" alt="Alaska" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Alaska_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">240 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Géométriques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Géométrique</li><li>Linéaire</li><li>Sans empattements</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Fonte variable</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Alaska est une typographie dessinée par Ian Party. Elle a été publiée par NewGlyph en 2020.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/alaska/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/129917/alaska" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-20" data-historique="sans-serifs grotesques" data-formelle="statique lineaire sans revival-classique" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Akzidenz-Grotesk.svg" alt="Akzidenz-Grotesk Next" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Akzidenz_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">13 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Grotesques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Linéaire</li><li>Sans empattements</li><li>Revival Classique</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Akzidenz-Grotesk Next est une typographie dessinée par Bernd Möllenstädt, Dieter Hofrichter. Elle a été publiée par Berthold en 2006.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/akzidenz-grotesk-next/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/13264/akzidenz-grotesk-next" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a><a href="https://fr.wikipedia.org/wiki/Akzidenz-Grotesk" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-21" data-historique="expressives" data-formelle="" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Africa.svg" alt="Africa" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Africa_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">3 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Expressives</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Africa est une typographie dessinée par Ian Party. Elle a été publiée par Newglyph en 2020.</p><div class="carte__liens"></div></div>
+</li>
+<li class="carte" id="fonte-22" data-historique="incises" data-formelle="" data-fonctionnalite="licence-libre">
+  <img class="carte__nom" src="assets/specimens/Infini.svg" alt="Infini" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Infini_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">3 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Incises</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Licence libre (open source)</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Infini est une typographie dessinée par Sandrine Nugue en 2015.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/infini/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/39792/infini" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-23" data-historique="monospace" data-formelle="" data-fonctionnalite="fonte-variable">
+  <img class="carte__nom" src="assets/specimens/Font_Name-copie.svg" alt="Alpaga" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Quick_Brown_Fox-copie.svg" alt="" loading="lazy">
+  <p class="carte__styles">44 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Monospace</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Fonte variable</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Alpaga est une typographie dessinée par Ian Party. Elle a été publiée par newglyph en 2020.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/alpaga/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/143565/alpaga" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-24" data-historique="sans-serifs grotesques" data-formelle="statique lineaire sans" data-fonctionnalite="fonte-variable">
+  <img class="carte__nom" src="assets/specimens/Baikal.svg" alt="Baikal" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Baikal_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">132 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Grotesques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Linéaire</li><li>Sans empattements</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Fonte variable</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Baikal est une typographie dessinée par Ian Party. Elle a été publiée par Newglyph en 2020.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/antarctica/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/169396/baikal" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-25" data-historique="serifs humanistes" data-formelle="dynamique contraste avec revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Tiina-Pro-Fontname.svg" alt="Tiina Pro" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/TiinaPro_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">10 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Humanistes Sérifs</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Contrasté</li><li>Avec empattements</li><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Tiina Pro est une typographie dessinée par Valentin Brustaux en 2010.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/tiina-pro/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a></div></div>
+</li>
+<li class="carte" id="fonte-26" data-historique="serifs didones" data-formelle="statique contraste avec revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Didot_Modern.svg" alt="Didot Modern" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/DidotModern_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">10 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Didones</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Contrasté</li><li>Avec empattements</li><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Didot Modern est une typographie dessinée par Arnaud Chemin. Elle a été publiée par Nouvelle Noire en 2021.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s2/didot-modern/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/172165/nn-didot-modern" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-27" data-historique="scriptes" data-formelle="revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/MillionaireScript.svg" alt="Millionaire" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Millionaire_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">3 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Scriptes</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Millionaire est une typographie dessinée par Raphaël Verona. Elle a été publiée par Altiplano en 2019.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/millionaire/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a></div></div>
+</li>
+<li class="carte" id="fonte-28" data-historique="sans-serifs grotesques" data-formelle="statique lineaire sans revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/AtlasGrotesk.svg" alt="Atlas Grotesk" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/AtlasGrotesk_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">12 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Grotesques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Linéaire</li><li>Sans empattements</li><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Atlas Grotesk est une typographie dessinée par Susana Carvalho, Kai Bernau, Christian Schwartz. Elle a été publiée par Commercial Type en 2012.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s1/atlas-grotesk/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/10534/atlas-grotesk" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-29" data-historique="sans-serifs hybrides" data-formelle="" data-fonctionnalite="fonte-variable chiffres-non-alignes licence-libre">
+  <img class="carte__nom" src="assets/specimens/IBMPlex.svg" alt="IBM Plex Sans" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/IBMPlexSans_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">14 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Hybrides</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Fonte variable</li><li>Chiffres non alignés</li><li>Licence libre (open source)</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">IBM Plex Sans est une typographie dessinée par Mike Abbink. Elle a été publiée par Bold Monday en 2017.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/ibm-plex/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/48059/ibm-plex-sans" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a><a href="https://fr.wikipedia.org/wiki/IBM_Plex" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-30" data-historique="sans-serifs sans-serifs-humanistes" data-formelle="dynamique lineaire sans revival-classique" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Frutiger_fontname.svg" alt="Frutiger" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Frutiger_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">19 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Humanistes Sans</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Linéaire</li><li>Sans empattements</li><li>Revival Classique</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Frutiger est une typographie dessinée par Adrian Frutiger. Elle a été publiée par Linotype en 2006.</p><div class="carte__liens"><a href="https://fontsinuse.com/typefaces/3481/frutiger" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a><a href="https://fr.wikipedia.org/wiki/Frutiger_(police_de_caract%C3%A8res)" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-31" data-historique="serifs garaldes" data-formelle="dynamique contraste avec revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Lapture_FontName-1.svg" alt="Lapture" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/lapture_quickbrownfox.svg" alt="" loading="lazy">
+  <p class="carte__styles">24 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Garaldes</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Contrasté</li><li>Avec empattements</li><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Lapture est une typographie dessinée par Tim Ahrens. Elle a été publiée par Just Another Foundry en 2004.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/lapture/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/21613/jaf-lapture" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-32" data-historique="serifs reales" data-formelle="dynamique contraste avec" data-fonctionnalite="licence-libre">
+  <img class="carte__nom" src="assets/specimens/Literata-fontname.svg" alt="Literata" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Literata_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">18 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Réales</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Contrasté</li><li>Avec empattements</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Licence libre (open source)</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Literata est une typographie dessinée par Irene Vlachou, Veronika Burian, Vera Evstafieva &amp; José Scaglione. Elle a été publiée par TypeTogether en 2015.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s1/literata/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/168709/literata" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-33" data-historique="serifs garaldes" data-formelle="dynamique contraste avec revival-classique" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Newsreader_fontname.svg" alt="Newsreader" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Newsreader_quickbrownfox.svg" alt="" loading="lazy">
+  <p class="carte__styles">14 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Garaldes</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Contrasté</li><li>Avec empattements</li><li>Revival Classique</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Newsreader est une typographie dessinée par Hugues Gentile et Jean-Baptiste Levée. Elle a été publiée par Production Type en 2021.</p><div class="carte__liens"><a href="https://fontsinuse.com/typefaces/152858/newsreader" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-34" data-historique="serifs didones" data-formelle="statique contraste avec revival-classique" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Bodoni_Fontname.svg" alt="Bodoni Std" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">7 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Didones</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Contrasté</li><li>Avec empattements</li><li>Revival Classique</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Bodoni Std est une typographie dessinée par Giambattista Bodoni. Elle a été publiée par Adobe en 1986.</p><div class="carte__liens"><a href="https://fontsinuse.com/typefaces/229/bodoni" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a><a href="https://fr.wikipedia.org/wiki/Bodoni" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-35" data-historique="serifs reales" data-formelle="avec" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Fleishmann_FontName.svg" alt="Fleischmann" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Fleishmann_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">6 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sérifs</li><li>Réales</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Avec empattements</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Fleischmann est une typographie dessinée par Erhard Kaiser, Johann Fleischmann. Elle a été publiée par Dutch Type Library en 1994.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/fleischmann/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/7210/dtl-fleischmann" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-36" data-historique="sans-serifs sans-serifs-humanistes" data-formelle="dynamique lineaire sans" data-fonctionnalite="licence-libre">
+  <img class="carte__nom" src="assets/specimens/FiraSans-fontname.svg" alt="Fira Sans" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/FiraSans_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">32 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Humanistes Sans</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Dynamique</li><li>Linéaire</li><li>Sans empattements</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Licence libre (open source)</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Fira Sans est une typographie dessinée par Erik Spiekermann, Ralph du Carrois. Elle a été publiée par Carrois Type Design en 2012.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/fira-sans/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/32113/fira-sans" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a><a href="https://fr.wikipedia.org/wiki/Fira_(police_de_caract%C3%A8res)" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-37" data-historique="sans-serifs grotesques" data-formelle="statique lineaire sans revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/AntiqueLegacy.svg" alt="Antique Legacy" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/AntiqueLegacy_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">14 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Grotesques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Linéaire</li><li>Sans empattements</li><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Antique Legacy est une typographie dessinée par François Rappo. Elle a été publiée par Optimo en 2020.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s1/antique-legacy/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/79078/antique-legacy" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-38" data-historique="sans-serifs grotesques" data-formelle="statique lineaire sans revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Unica77.svg" alt="Unica77" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Unica77_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">14 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Grotesques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Linéaire</li><li>Sans empattements</li><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Unica77 est une typographie dessinée par Team’77, Christian Mengelt, Luca Pellegrini. Elle a été publiée par Lineto en 2015.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s2/unica77/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/38634/ll-unica77" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a><a href="https://fr.wikipedia.org/wiki/Unica_(police_de_caract%C3%A8res)" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">wikipedia</a></div></div>
+</li>
+<li class="carte" id="fonte-39" data-historique="scriptes" data-formelle="revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Monaako.svg" alt="Monaako" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Monaako_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">1 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Scriptes</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Monaako est une typographie dessinée par Raphaël Verona. Elle a été publiée par Altiplano en 2019.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/monaako/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/109460/monaako" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-40" data-historique="monospace" data-formelle="revival-classique" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/OCRF.svg" alt="OCR-F" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/OCRF_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">3 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Monospace</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Revival Classique</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">OCR-F est une typographie dessinée par Albert-Jan Pool. Elle a été publiée par FontShop en 1995.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s2/ocr-f/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/24908/ff-ocr-f" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-41" data-historique="monospace" data-formelle="" data-fonctionnalite="licence-libre">
+  <img class="carte__nom" src="assets/specimens/SpaceMono-Fontname.svg" alt="Space Mono" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/SpaceMono_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">4 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Monospace</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Licence libre (open source)</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Space Mono est une typographie dessinée par Benjamin Critton. Elle a été publiée par Colophon Foundry en 2016.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/space-mono/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/45044/space-mono" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-42" data-historique="sans-serifs grotesques" data-formelle="statique lineaire sans revival-moderne" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/FoundersGrotesk.svg" alt="Founders Grotesk" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/FoundersGrotesk_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">10 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Grotesques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Statique</li><li>Linéaire</li><li>Sans empattements</li><li>Revival Moderne</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Founders Grotesk est une typographie dessinée par Kris Sowersby. Elle a été publiée par Klim Type Foundry en 2022.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s2/founders-grotesk/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/50/founders-grotesk" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-43" data-historique="sans-serifs geometriques" data-formelle="geometrique lineaire sans revival-moderne" data-fonctionnalite="variations-stylistiques">
+  <img class="carte__nom" src="assets/specimens/Supreme.svg" alt="Supreme" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Supreme_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">16 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Géométriques</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Géométrique</li><li>Linéaire</li><li>Sans empattements</li><li>Revival Moderne</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Variations stylistiques</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Supreme est une typographie dessinée par Arve Båtevik. Elle a été publiée par Lineto en 2020.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s3/supreme/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/132071/ll-supreme" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+<li class="carte" id="fonte-44" data-historique="expressives" data-formelle="" data-fonctionnalite="fonte-variable">
+  <img class="carte__nom" src="assets/specimens/Stardust_fontname-1.svg" alt="Stardust" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Stardust_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">132 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Expressives</li></ul><ul class="carte__taxonomie carte__taxonomie--fonctionnalite"><li>Fonte variable</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Stardust est une typographie dessinée par Ian Party. Elle a été publiée par Newglyph en 2022.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/stardust/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a></div></div>
+</li>
+<li class="carte" id="fonte-45" data-historique="sans-serifs sans-serifs-humanistes" data-formelle="sans" data-fonctionnalite="">
+  <img class="carte__nom" src="assets/specimens/Allegra_fontname.svg" alt="Allegra" loading="lazy">
+  <img class="carte__apercu" src="assets/specimens/Allegra_Quick_Brown_Fox.svg" alt="" loading="lazy">
+  <p class="carte__styles">14 styles</p>
+  <ul class="carte__taxonomie carte__taxonomie--historique"><li>Sans-Sérifs</li><li>Humanistes Sans</li></ul><ul class="carte__taxonomie carte__taxonomie--formelle"><li>Sans empattements</li></ul>
+  <hr>
+  <div class="carte__pied"><p class="carte__description">Allegra est une typographie dessinée par Jost Hochuli. Elle a été publiée par Nouvelle Noire en 2019.</p><div class="carte__liens"><a href="https://specimens.eracom.ch/s4/allegra/" target="_blank" rel="noopener" class="carte__lien carte__lien--specimen">spécimen</a><a href="https://fontsinuse.com/typefaces/31615/allegra" target="_blank" rel="noopener" class="carte__lien carte__lien--ext">fontsinuse.com</a></div></div>
+</li>
+</ul>
+<p class="aucun" hidden>Aucune fonte ne correspond à ces filtres.</p>
+</main>
+</body>
+</html>

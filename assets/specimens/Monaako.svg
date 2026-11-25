@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Calque_1"
+   version="1.1"
+   viewBox="0 0 4868.23 966.45"
+   sodipodi:docname="Monaako.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.086461223"
+     inkscape:cx="815.39444"
+     inkscape:cy="-780.6968"
+     inkscape:window-width="1392"
+     inkscape:window-height="890"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Calque_1" />
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs
+     id="defs6">
+    <style
+       id="style1">
+      .st0 {
+        fill: none;
+      }
+
+      .st1 {
+        fill: #231f20;
+      }
+
+      .st2 {
+        fill: #1d1d1b;
+      }
+
+      .st3 {
+        isolation: isolate;
+      }
+
+      .st4 {
+        clip-path: url(#clippath-1);
+      }
+
+      .st5 {
+        clip-path: url(#clippath-3);
+      }
+
+      .st6 {
+        clip-path: url(#clippath-4);
+      }
+
+      .st7 {
+        clip-path: url(#clippath-2);
+      }
+
+      .st8 {
+        clip-path: url(#clippath-5);
+      }
+
+      .st9 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath
+       id="clippath">
+      <rect
+         class="st0"
+         x="-2551.13"
+         y="-940.12"
+         width="2343.63"
+         height="679.36"
+         id="rect1" />
+    </clipPath>
+    <clipPath
+       id="clippath-1">
+      <rect
+         class="st0"
+         x="-2188.7"
+         y="2041.4"
+         width="2097.03"
+         height="542.99"
+         id="rect2" />
+    </clipPath>
+    <clipPath
+       id="clippath-2">
+      <rect
+         class="st0"
+         x="274.15"
+         y="-1521.21"
+         width="4474.19"
+         height="690.87"
+         id="rect3" />
+    </clipPath>
+    <clipPath
+       id="clippath-3">
+      <rect
+         class="st0"
+         x="-26.95"
+         y="-2572.33"
+         width="2612.9"
+         height="650.8"
+         id="rect4" />
+    </clipPath>
+    <clipPath
+       id="clippath-4">
+      <rect
+         class="st0"
+         x="537.65"
+         y="1306.17"
+         width="3680.25"
+         height="604.89"
+         id="rect5" />
+    </clipPath>
+    <clipPath
+       id="clippath-5">
+      <rect
+         class="st0"
+         x="176.58"
+         y="125.93"
+         width="2791.72"
+         height="765.71"
+         id="rect6" />
+    </clipPath>
+  </defs>
+  <g
+     class="st8"
+     clip-path="url(#clippath-5)"
+     id="g17">
+    <path
+       class="st1"
+       d="M2768.71,615.47c-53.35,0-96.65-40.8-96.65-97.91s44.56-98.53,96.65-98.53,97.28,40.8,97.28,98.53-43.31,97.91-97.28,97.91M2768.71,324.88c-109.21,0-198.97,86.61-198.97,192.68s89.76,192.06,198.97,192.06,199.58-85.98,199.58-192.06-90.38-192.68-199.58-192.68M2463.68,417.77l-115.48,66.53,18.2-66.53h97.28ZM2476.86,594.76l-63.39-64.02,112.98-65.27,14.43-50.84-81.59-80.33h-70.92l18.83-69.04-65.27-138.08-134.31,500.85,80.33,80.33,35.15-131.8,131.8,131.8,156.91-89.11,33.26-120.52-168.21,96.03ZM2121.62,600.42l33.89-124.9-64.01-138.09c-21.34-8.15-44.57-12.55-69.68-12.55-107.95,0-195.19,82.84-195.19,188.29,0,91.64,55.24,175.11,161.3,196.45l26.99-95.4c-52.72-11.3-85.98-48.96-85.98-99.17,0-57.73,42.06-96.02,92.89-96.02,17.57,0,31.38,3.13,43.94,8.15l-50.21,187.04,94.15,94.14,156.91-89.75,32.01-119.26-177,101.05ZM1732.48,600.42l33.89-124.9-64.02-138.09c-21.33-8.15-44.56-12.55-69.66-12.55-107.95,0-195.19,82.84-195.19,188.29,0,91.64,55.24,175.11,161.3,196.45l26.99-95.4c-52.72-11.3-85.98-48.96-85.98-99.17,0-57.73,42.05-96.02,92.89-96.02,17.57,0,31.38,3.13,43.94,8.15l-50.21,187.04,94.14,94.14,156.92-89.75,32-119.26-176.99,101.05ZM1357.8,588.49l21.33-77.83-73.42-74.06-57.12,32.63,17.57-64.01-80.97-80.34-82.21,303.77,80.96,80.34,43.31-158.79,46.45-26.99-28.88,106.07,79.71,79.71,170.72-97.91,32.01-119.24-169.46,96.65ZM912.17,615.47c-53.35,0-96.66-40.8-96.66-97.91s44.57-98.53,96.66-98.53,97.28,40.8,97.28,98.53-43.31,97.91-97.28,97.91M912.17,324.88c-109.21,0-198.97,86.61-198.97,192.68s89.76,192.06,198.97,192.06,199.58-85.98,199.58-192.06-90.38-192.68-199.58-192.68M618.43,431.58l-128.04,148.75,58.38-217.17-81.6-81.59-128.03,147.49,57.73-217.15-86.61-86-133.68,496.46,86.61,86.61,32.64-121.14,114.85-128.03-51.46,194.56,87.25,87.25,114.22-131.18-50.83,194.57,86.61,86.61,102.92-379.1-80.96-80.96Z"
+       id="path16" />
+  </g>
+</svg>
